@@ -70,4 +70,17 @@ wget https://git.io/wireguard -O wireguard-install.sh && sudo bash wireguard-ins
 - type the subdomain you've picked at freeDNS (e.g. paulovpn.mooo.com). For first client name, pick any name you want. DNS server for client (sure the importance of this) I've picked 3rd option, 1.1.1.1. Then installation should begin.
 
 
+## 7. Set the client
+- When the above wireguard finishes, it should show a QR code. You can use that using the Wireguard app on the phone to set the client on android or iphone (obviously after installing Wireguard on your phone whch you can do from Apple Store or Play Store).
+- To connect using a PC requires a few extra steps. We need to move the configuration files from root to home directory. Log into the RPi from a terminal and type the below:
+```
+sudo su
+```
+```
+cp /root/*.conf /home/pi
+```
+(replace the above by your home directory e.g. /home/paulo)
 
+- Log onto your RPi using ftp by using `sftp pi@raspberrypi.local`. Replace pi by your RPi username.
+- Then copy the config file to your machine by typing `get *.conf`.
+- Install [wireguard](https://www.wireguard.com/install/) on your computer. Lauch Wireguard and press "Add tunnel configuration from a file". Use the file you grabed from the RPi.
