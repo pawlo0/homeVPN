@@ -57,5 +57,17 @@ Don't worry if it is showing an error. All will be fine if you go back to freeDN
 sudo systemctl enable ddclient
 ```
 
+## 5. Port forwarding
+- Go to your router and add the PRi to be accessible from the outside. On my router it is called "port mapping". Select UDP and port 51820.
+
+## 6. Install Wireguard
+- We're going to use a Wireguard-Install from [nyr](https://github.com/Nyr/wireguard-install). Navigate to his github site and/or directly type the below on your RPi:
+
+```
+wget https://git.io/wireguard -O wireguard-install.sh && sudo bash wireguard-install.sh
+```
+
+- type the subdomain you've picked at freeDNS (e.g. paulovpn.mooo.com). For first client name, pick any name you want. DNS server for client (sure the importance of this) I've picked 3rd option, 1.1.1.1. Then installation should begin.
+
 
 
