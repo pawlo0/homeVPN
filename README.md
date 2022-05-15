@@ -1,5 +1,5 @@
 # Summary
-Instructions on how to set a home VPN using Raspberry Pi Zero w.
+Instructions on how to set a home VPN using Raspberry Pi Zero w. Just documenting the instructions found [here](https://www.youtube.com/watch?v=rtUl7BfCNMY) for future reference.
 
 ## 1.Prepare Raspberry OS SD card
 - Download the [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
