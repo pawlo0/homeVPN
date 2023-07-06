@@ -31,11 +31,11 @@ ssl=yes
 use=web, web=dynamicdns.park-your-domain.com/getip, web-skip='IP Address'
 server=freedns.afraid.org
 protocol=freedns
-login='your freeDNS username'
+login=your freeDNS username
 password='your freeDNS password'
 paulovpn.strangled.net
 ```
-Notice I picked `use=web` instead of `use=if`. This is because the RPi Zero does not connect using Ethernet cable and I found this to be the way to find your current IP.
+Notice I picked `use=web` instead of `use=if`. This is because the RPi Zero does not connect using Ethernet cable and I found this to be the way to find your current IP. Nevertheless, even when I used ethernet it seemed to pick the internal IP. So go with web. Also, username without quotation marks. Not sure why but it didn't work when I use quotation marks, it gave me authetication errors.
 
 - There's another file we need to edit `sudo nano /etc/default/ddclient`. Make sure all is set to false and change the below to true. In my case it was there and I needed to add to the file:
 ```
