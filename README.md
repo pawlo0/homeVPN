@@ -84,3 +84,23 @@ cp /root/*.conf /home/pi
 - Log onto your RPi using ftp by using `sftp pi@raspberrypi.local`. Replace pi by your RPi username.
 - Then copy the config file to your machine by typing `get *.conf`.
 - Install [wireguard](https://www.wireguard.com/install/) on your computer. Lauch Wireguard and press "Add tunnel configuration from a file". Use the file you grabed from the RPi.
+
+### 7.1 Set client in ubuntu
+- Install Wireguard
+```
+sudo apt install wireguard
+```
+- Follow the steps in 7 to grab the conf file.
+- Type the following to start tunnel
+  ```
+  sudo wg-quick up client
+  ```
+- The above assumes your .conf file was named client.conf. If it had been named something else, you would replace client with whatever the name was of your .conf file.
+- Check the status of your WG connection:
+```
+sudo wg
+```
+- When you're done with your WG interface, you can take it down:
+```
+sudo wg-quick down wg0
+```
