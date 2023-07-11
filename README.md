@@ -15,8 +15,8 @@ Instructions on how to set a home VPN using Raspberry Pi Zero w. Just documentin
 ## 3. Set dynamic DNS
 - For this tutorial I'll use **freeDNS**. Go to [FreeDNS](https://freedns.afraid.org/) and signup.
 - After registration and checking your email address, got to **"Add subdomain"**.
-  - Chose any subdomain name you like,
-  - pick a domain from the dropdown,
+  - Chose any subdomain name you like (e.g. myvpn),
+  - pick a domain from the dropdown (mooo.com),
   - change destination (which should have your current IP) to **0.0.0.0**. The reason to change it to 0.0.0.0 (it could be any other IP number) is to detect it changes back to your IP when all is done. If all goes well. 😄
 
 
@@ -35,7 +35,7 @@ server=freedns.afraid.org
 protocol=freedns
 login=your freeDNS username
 password='your freeDNS password'
-paulovpn.strangled.net
+myvpn.mooo.com
 ```
 Notice I picked `use=web` instead of `use=if`. This is because the RPi Zero does not connect using Ethernet cable and I found this to be the way to find your current IP. Nevertheless, even when I used ethernet it seemed to pick the internal IP. So go with web. Also, username without quotation marks. Not sure why but it didn't work when I use quotation marks, it gave me authetication errors.
 
@@ -69,7 +69,7 @@ sudo systemctl enable ddclient
 wget https://git.io/wireguard -O wireguard-install.sh && sudo bash wireguard-install.sh
 ```
 
-- type the subdomain you've picked at freeDNS (e.g. paulovpn.mooo.com). For first client name, pick any name you want. DNS server for client (sure the importance of this) I've picked 3rd option, 1.1.1.1. Then installation should begin.
+- type the subdomain you've picked at freeDNS (e.g. myvpn.mooo.com). For first client name, pick any name you want. DNS server for client (sure the importance of this) I've picked 3rd option, 1.1.1.1. Then installation should begin.
 
 
 ## 7. Set the client
