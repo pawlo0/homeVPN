@@ -13,10 +13,12 @@ Instructions on how to set a home VPN using Raspberry Pi Zero w. Just documentin
 - Finally `sudo reboot`
 
 ## 3. Set dynamic DNS
-- For this tutorial I'll use freeDNS. Go to [FreeDNS](https://freedns.afraid.org/) and signup. After registration and checking your email address, got to "Add subdomain".
-- Chose any subdomain name you like, pick a domain and change destination (which should have your current IP) to **0.0.0.0**. The reason to pick this IP is to see it change afterwards, if all goes well.
+- For this tutorial I'll use **freeDNS**. Go to [FreeDNS](https://freedns.afraid.org/) and signup.
+- After registration and checking your email address, got to **"Add subdomain"**.
+  - Chose any subdomain name you like,
+  - pick a domain from the dropdown,
+  - change destination (which should have your current IP) to **0.0.0.0**. The reason to change it to 0.0.0.0 (it could be any other IP number) is to detect it changes back to your IP when all is done. If all goes well. 😄
 
-![set freeDNS subdomain](images/3.png)
 
 ## 4. Install and set ddclient
 - go back to the RPi and type `sudo apt install ddclient`. It is going to ask for a lot of questions, can press enter without typing anything.
