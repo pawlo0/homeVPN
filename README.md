@@ -92,12 +92,16 @@ cp /root/*.conf /home/pi
 ```
 sudo apt install wireguard
 ```
-- Follow the steps in 7 to grab the conf file.
+- Follow the steps in 7 to grab the conf file. Move it to the /etc/wireguard/
+  ```
+  mv client.conf /etc/wireguard
+  ```
+  The above assumes your .conf file was named client.conf. If it had been named something else, you would replace client with whatever the name was of your .conf file.
 - Type the following to start tunnel:
   ```
   sudo wg-quick up client
   ```
-- The above assumes your .conf file was named client.conf. If it had been named something else, you would replace client with whatever the name was of your .conf file.
+  Again, the above assumes your .conf file was named client.conf.
 
 - Check the status of your WG connection:
 ```
