@@ -34,7 +34,7 @@ use=web, web=dynamicdns.park-your-domain.com/getip, web-skip='IP Address'
 server=freedns.afraid.org
 protocol=freedns
 login=your freeDNS username
-password='your freeDNS password'
+password="your freeDNS password"
 myvpn.mooo.com
 ```
 Notice I picked `use=web` instead of `use=if`. This is because the RPi Zero does not connect using Ethernet cable and I found this to be the way to find your current IP. Nevertheless, even when I used ethernet it seemed to pick the internal IP. So go with web. Also, username without quotation marks. Not sure why but it didn't work when I use quotation marks, it gave me authetication errors.
